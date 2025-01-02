@@ -1,6 +1,5 @@
 // Sudoku tahtasını seç ve varsayılan boyutları belirle
 const board = document.getElementById('sudoku-board');
-const difficultySelector = document.getElementById('difficulty');
 const submitButton = document.getElementById('submit-button');
 const hintButton = document.getElementById('hint-button'); // İpucu butonu
 const modal = document.getElementById('modal');
@@ -31,9 +30,10 @@ function createBoard(size, block) {
             if (j % block === 0) cell.classList.add('block-left');
 
             const input = document.createElement('input');
-            input.type = 'number';
+            input.type = 'text';
             input.min = '1';
             input.max = '9';
+            input.maxLength = 1;
 
             input.addEventListener('keydown', (event) => {
                 const key = event.key;
@@ -147,13 +147,6 @@ function clearAllErrorHighlights() {
     });
 }
 
-// Zorluk seviyesi değiştiğinde tahtayı yeniden oluştur
-difficultySelector.addEventListener('change', (event) => {
-    const value = parseInt(event.target.value, 10);
-    if (value === 4) createBoard(4, 2);
-    else if (value === 6) createBoard(6, 2);
-    else if (value === 9) createBoard(9, 3);
-});
 
 // Sayfa yüklendiğinde varsayılan tahtayı oluştur
 createBoard(4, 2);
