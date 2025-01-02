@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Sudoku</h1>
+    <div id="difficulty-selector">
+        <label for="difficulty">Zorluk Seviyesi:</label>
+        <select id="difficulty">
+            <option value="4" selected>Kolay (4x4)</option>
+            <option value="6">Orta (6x6)</option>
+            <option value="9">Zor (9x9)</option>
+        </select>
+    </div>
+    <div id="modal" style="display: none;">
+        <div id="modal-content">
+            <p id="modal-text"></p>
+            <button id="next-button">Sonraki Moda Geç</button>
+            <button id="replay-button">Tekrar Oyna</button>
+        </div>
+    </div>
+    <div id="sudoku-board"></div>
+    <button id="submit-button" disabled>Submit</button>
+    <button id="hint-button">Hint</button> <!-- İpucu butonu -->
+    <script src="script.js"></script>
+</body>
+</html>
